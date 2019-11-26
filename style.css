@@ -1,0 +1,132 @@
+body {
+    background-color: #d1ffa6;
+}
+
+input {
+    margin: 2px;
+}
+
+.calc {
+    display: flex;
+    justify-content: center;
+}
+
+.calc_distance {
+    width: 300px;
+    border: 2px solid black;
+    margin: 5px;
+}
+
+.calc_100 {
+    width: 300px;
+    border: 2px solid black;
+    margin: 5px;
+}
+
+.style_button {
+    display: flex;
+    justify-content: center;
+}
+
+.points {
+    width: 300px;
+    height: 50px;
+    margin: 20px auto;
+}
+
+#map {
+    width: auto;
+    height: 600px;
+    margin: 0;
+}
+
+.picture {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.picture_input {
+    margin: 10px;
+}
+
+
+/* Кнопки  */
+
+#ok {
+    width: 173px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px);
+    border-radius: 3px;
+    background: rgb(64, 199, 129);
+    box-shadow: 0 -3px rgb(53, 167, 110) inset;
+    transition: 0.2s;
+}
+
+#ok:hover {
+    background: rgb(53, 167, 110);
+}
+
+#ok:active {
+    background: rgb(33, 147, 90);
+    box-shadow: 0 3px rgb(33, 147, 90) inset;
+}
+
+#consider {
+    display: flex;
+    justify-content: center;
+    color: black;
+    margin: 10px;
+    font-size: 125%;
+    font-weight: 700;
+    text-decoration: none;
+    user-select: none;
+    padding: .25em .5em;
+    outline: none;
+    border: 1px solid rgb(64, 199, 129);
+    ;
+    border-radius: 7px;
+    background: rgb(64, 199, 129) linear-gradient(rgb(64, 199, 129), rgb(64, 199, 129));
+    box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0), inset 0 1px 2px rgba(0, 0, 0, 0), inset 0 0 0 60px rgba(255, 255, 0, 0);
+    transition: box-shadow .2s, border-color .2s;
+}
+
+#consider:hover {
+    box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0), inset 0 1px 2px rgba(0, 0, 0, 0), inset 0 0 0 60px rgba(255, 255, 0, .5);
+}
+
+#consider:active {
+    padding: calc(.25em + 1px) .5em calc(.25em - 1px);
+    border-color: rgba(177, 159, 0, 1);
+    box-shadow: inset 0 -1px 1px rgba(0, 0, 0, .1), inset 0 1px 2px rgba(0, 0, 0, .3), inset 0 0 0 60px rgba(255, 255, 0, .45);
+}
+
+#reset {
+    display: flex;
+    justify-content: center;
+    color: black;
+    margin: 10px;
+    font-size: 125%;
+    font-weight: 700;
+    text-decoration: none;
+    user-select: none;
+    padding: .25em .5em;
+    outline: none;
+    border: 1px solid rgb(64, 199, 129);
+    border-radius: 7px;
+    background: rgb(64, 199, 129) linear-gradient(rgb(64, 199, 129), rgb(64, 199, 129));
+    box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0), inset 0 1px 2px rgba(0, 0, 0, 0), inset 0 0 0 60px rgba(255, 255, 0, 0);
+    transition: box-shadow .2s, border-color .2s;
+}
+
+#reset:hover {
+    box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0), inset 0 1px 2px rgba(0, 0, 0, 0), inset 0 0 0 60px rgba(255, 255, 0, .5);
+}
+
+#reset:active {
+    padding: calc(.25em + 1px) .5em calc(.25em - 1px);
+    border-color: rgba(177, 159, 0, 1);
+    box-shadow: inset 0 -1px 1px rgba(0, 0, 0, .1), inset 0 1px 2px rgba(0, 0, 0, .3), inset 0 0 0 60px rgba(255, 255, 0, .45);
+}
