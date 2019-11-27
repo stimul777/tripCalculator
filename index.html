@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
@@ -12,17 +11,18 @@
         <div class="calc_distance">
             Рублей за расстояние<br>
             <input type="text" id="distance" placeholder="Расстояние" class="entry_field"> <br>
-            <input type="text" id="price" placeholder="Цена за 1 литр" class="entry_field"><br>
+            <input type="text" id="price" placeholder="Цена за 1 литр" class="entry_field" value=48><br>
             <input type="text" id="consumption" placeholder="Расход на 100км" class="entry_field"> <br>
             <input type="checkbox" id="check_two_sides"> Посчитать в обе стороны<br>
+            <input type="checkbox" id="check_liters">Узнать расход
             <div>
                 Результат: <strong id="output"></strong><br>
             </div>
         </div>
-        <div class="calc_100">
+        <div id="calc_100">
             Расход на 100км<br>
-            <input type="text" id="liters" placeholder="Заправил (литры)" class="entry_field"> <br>
-            <input type="text" id="distance_100" placeholder="Проехал" class="entry_field"><br>
+            <input type="text" id="liters" placeholder="Заправил (литры)"> <br>
+            <input type="text" id="distance_100" placeholder="Проехал"><br>
             <div>
                 Результат: <strong id="output_100"></strong><br>
             </div>
@@ -36,15 +36,11 @@
 
     <div class="picture">
         <div class='picture_input'>
-            <input type="text" id="pointA" class="distance_points" class="entry_field" placeholder="Откуда?"> <br>
-            <input type="text" id="pointB" class="distance_points" class="entry_field" placeholder="Куда?"><br>
+            <input type="text" id="pointA" class="distance_points" class="entry_field" placeholder="Откуда?" value="Санкт-Питербург"> <br>
+            <input type="text" id="pointB" class="distance_points" class="entry_field" placeholder="Куда?" value="Сочи"><br>
             <button id="ok">Построить маршрут</button><br>
         </div>
     </div>
-
-
-
-
 
 
     <div id="map"></div>

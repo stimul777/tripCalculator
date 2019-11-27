@@ -17,10 +17,11 @@ input {
     margin: 5px;
 }
 
-.calc_100 {
+#calc_100 {
     width: 300px;
     border: 2px solid black;
     margin: 5px;
+    display: none;
 }
 
 .style_button {
@@ -49,6 +50,11 @@ input {
 .picture_input {
     margin: 10px;
 }
+
+
+/* #calc_100_input {
+    display: none;
+} */
 
 
 /* Кнопки  */
