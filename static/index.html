@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+     <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="calc">
+        <div class="calc_distance">
+            <input type="text" id="distance" placeholder="Расстояние" class="entry_field"> <br>
+            <input type="text" id="price" placeholder="Цена за 1 литр" class="entry_field" value=48><br>
+            <input type="text" id="consumption" placeholder="Расход на 100км" class="entry_field"> <br>
+            <input type="checkbox" id="check_two_sides"> Посчитать в обе стороны<br>
+            <input type="checkbox" id="check_liters">Узнать расход
+            <div>
+                Результат: <strong id="output"></strong><br>
+            </div>
+        </div>
+        <div id="calc_100">
+            Расход на 100км<br>
+            <input type="text" id="liters" placeholder="Заправил (литры)"> <br>
+            <input type="text" id="distance_100" placeholder="Проехал"><br>
+            <div>
+                Результат: <strong id="output_100"></strong><br>
+            </div>
+        </div>
+    </div>
+
+    <div class="style_button">
+        <button id="consider">Посчитать</button><br>
+        <button id="reset">Сбросить</button><br>
+    </div>
+
+    <div class="picture">
+        <div class='picture_input'>
+            <input type="text" id="pointA" class="distance_points" class="entry_field" placeholder="Откуда?" value="Санкт-Питербург"> <br>
+            <input type="text" id="pointB" class="distance_points" class="entry_field" placeholder="Куда?" value="Сочи"><br>
+            <button id="ok">Построить маршрут</button><br>
+        </div>
+    </div>
+
+
+    <div id="map"></div>
+
+</body>
+<script src="https://api-maps.yandex.ru/2.1/?apikey=107edbda-a282-45c8-9340-736038bcb720&lang=ru_RU" type="text/javascript"></script>
+<script src="js.js"></script>
+
+</html>

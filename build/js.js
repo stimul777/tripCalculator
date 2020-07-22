@@ -5,6 +5,11 @@ let consumption = document.getElementById('consumption'); // л/100к
 let output = document.getElementById('output'); //результат
 let calc_100 = document.getElementById('calc_100');
 
+
+document.getElementById('reset').addEventListener("click", function() {
+    window.location.reload();
+})
+
 check_liters.addEventListener("click", function() {
     if (check_liters.checked) {
         calc_100.style.display = "block";
@@ -47,30 +52,32 @@ document.getElementById('consider').addEventListener("click", function() {
 });
 
 // Яндекс карты
-ymaps.ready(function() {
-    let map;
-    let pointA = document.getElementById('pointA'); //получаем точку А
-    let pointB = document.getElementById('pointB'); //получаем точку В
-    let mapDivId = 'map'; //Id контейнера для карты 
-    let mapCenter = [55.76, 37.64]; //Координата центра карты по умолчанию
-    map = new ymaps.Map(mapDivId, { center: mapCenter, zoom: 3 });
-    document.getElementById('ok').addEventListener('click', ReadRoute); //по клику вызываем ReadRoute
+ymaps.ready(() => {
 
-    function ReadRoute() {
-        return ymaps.route([pointA.value, pointB.value]).then( //получили координаты 
-            function(route) {
-                distance.value = Math.round(route.getLength() / 1000); //получаем расстояние (в метрах и переводим в км)
-                map.geoObjects.removeAll();
-                map.geoObjects.add(route); //рисуем карту
+    return new Promise(resolve => {
+        let map;
+        let pointA = document.getElementById('pointA'); //получаем точку А
+        let pointB = document.getElementById('pointB'); //получаем точку В
+        let mapDivId = 'map'; //Id контейнера для карты 
+        let mapCenter = [55.76, 37.64]; //Координата центра карты по умолчанию
+        map = new ymaps.Map(mapDivId, { center: mapCenter, zoom: 3 });
+        document.getElementById('ok').addEventListener('click', ReadRoute); //по клику вызываем ReadRoute
+    
+        function ReadRoute () {
+            return ymaps.route([pointA.value, pointB.value]).then( //получили координаты 
+                function(route) {
+                    distance.value = Math.round(route.getLength() / 1000); //получаем расстояние (в метрах и переводим в км)
+                    map.geoObjects.removeAll();
+                    map.geoObjects.add(route); //рисуем карту
+    
+                },
+                (error) => {
+                    alert('Ошибка: Введены неверные значения ');
+                }
+            );
+        }
+    })
+    .then(() => console.log("Промисс отработал!"))
+    .catch(() => console.log('ОШИБКА! Промис не сработал!'));
 
-            },
-            function(error) {
-                alert('Ошибка: Введены неверные значения ');
-            }
-        );
-    }
-})
-
-document.getElementById('reset').addEventListener("click", function() {
-    window.location.reload();
 });
