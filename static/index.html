@@ -1,51 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class="calc">
-        <div class="calc_distance">
-            <input type="text" id="distance" placeholder="Расстояние" class="entry_field"> <br>
-            <input type="text" id="price" placeholder="Цена за 1 литр" class="entry_field" value=48><br>
-            <input type="text" id="consumption" placeholder="Расход на 100км" class="entry_field"> <br>
-            <input type="checkbox" id="check_two_sides"> Посчитать в обе стороны<br>
-            <input type="checkbox" id="check_liters">Узнать расход
-            <div>
-                Результат: <strong id="output"></strong><br>
+        <section class="calc">
+        
+            <div class="progress">
+                <div class="progress-bar" id="progress" role="progressbar" style="width: 0" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
-        </div>
-        <div id="calc_100">
-            Расход на 100км<br>
-            <input type="text" id="liters" placeholder="Заправил (литры)"> <br>
-            <input type="text" id="distance_100" placeholder="Проехал"><br>
-            <div>
-                Результат: <strong id="output_100"></strong><br>
+
+            <div class="calc__distance" id="calc-container">
+                <p class="calc__distance-description"><i>Введите расстояние:</i></p> 
+                <input  type="text" id="distance" placeholder="Расстояние в км"> 
+                <p class="calc__distance-description"><i>Цена за 1 литр:</i></p>
+                <input  type="text" id="price" placeholder="Цена за 1 литр" class="entry_field">
+                <p class="calc__distance-description"><i>Расход на 100км:</i></p>
+                <input  type="text" id="consumption" placeholder="Расход на 100км" class="entry_field">
+
+                <div class="calc__distance-checkbox">
+                     <input class="" type="checkbox" id="check_two_sides" value=""> </p>Посчитать в обе стороны</p>
+                     <input type="checkbox" id="check_liters"> <p>Узнать расход</p>   
+                </div>
+                <div class="">
+                    <p>Результат:</p> <strong id="output"></strong>
+                </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <div class="style_button">
-        <button id="consider">Посчитать</button><br>
-        <button id="reset">Сбросить</button><br>
-    </div>
-
-    <div class="picture">
-        <div class='picture_input'>
-            <input type="text" id="pointA" class="distance_points" class="entry_field" placeholder="Откуда?" value="Санкт-Питербург"> <br>
-            <input type="text" id="pointB" class="distance_points" class="entry_field" placeholder="Куда?" value="Сочи"><br>
-            <button id="ok">Построить маршрут</button><br>
-        </div>
-    </div>
-
-
-    <div id="map"></div>
+        <section class="calc-consumption"> 
+            <div class="calc-consumption__wrapper">
+                <p>Расход на 100км </p>
+                <input type="text" id="liters" placeholder="Заправил (литры)"> 
+                <input type="text" id="distance_consumption" placeholder="Проехал"><br>
+                <p>Результат:</p> <strong id="output_100"></strong><br>
+            </div>   
+        </section>
+    
+        <section class = "button-app">
+            <button class = "btn btn-success" id="consider" >Посчитать</button><br>
+            <button class= "btn btn-danger" id="reset">Сбросить</button><br>
+        </section>
+    
+        <section class="points">
+            <div class='points-input'>
+                <input type="text" id="pointA" class="distance_points" class="entry_field" placeholder="Откуда?" value="Санкт-Питербург"> <br>
+                <input type="text" id="pointB" class="distance_points" class="entry_field" placeholder="Куда?" value="Сочи"><br>
+                <button class="btn btn-outline-primary" id="startRoute">Построить маршрут</button><br>
+            </div>
+        </section>    
+    
+    <section class="" id="map"></section>
 
 </body>
+<!-- map -->
 <script src="https://api-maps.yandex.ru/2.1/?apikey=107edbda-a282-45c8-9340-736038bcb720&lang=ru_RU" type="text/javascript"></script>
-<script src="js.js"></script>
-
+<!-- Bootstrap -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="calc.js"></script>
+<script src="progressBar.js"></script>
+<script src="map.js"></script>
 </html>

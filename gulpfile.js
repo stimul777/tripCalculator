@@ -18,7 +18,7 @@ function html() {
 };
 
 function js() {
-	return gulp.src('./static/*.js')
+	return gulp.src('./static/js/*.js')
 		.pipe(gulp.dest('./build/'))
 		.pipe(browserSync.stream());
 };
@@ -73,7 +73,7 @@ function watch () {
     gulp.watch('./static/styles/bem/components/*.less',less).on('change', browserSync.reload);
 
 	// Стандарт
-	gulp.watch('./static/*.js',js).on('change', browserSync.reload);
+	gulp.watch('./static/js/*.js',js).on('change', browserSync.reload);
 	gulp.watch('./static/*.css',css).on('change', browserSync.reload);
 	gulp.watch('./static/index.html',html).on('change', browserSync.reload);
 };
