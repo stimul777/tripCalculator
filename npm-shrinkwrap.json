@@ -1,7 +1,0 @@
-// Используется для устранения конфликтов между Node и Gulp
-{
-  "dependencies": {
-    "graceful-fs": {
-      "version": "4.2.2"
-    }
-  }

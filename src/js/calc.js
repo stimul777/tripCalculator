@@ -1,23 +1,20 @@
 class Calc {
-    constructor() {
-        this.distance = document.getElementById('distance'); //расстояние
-        this.consumption100 = document.getElementById('consumption'); //расход литров на 100км
-        this.price = document.getElementById('price'); //цена за 1 л
+  constructor() {
+      this.distance = document.getElementById('distance'); //расстояние
+      this.consumption100 = document.getElementById('consumption'); //расход литров на 100км
+      this.price = document.getElementById('price'); //цена за 1 л
 
-        this.output = document.getElementById('output'); //результат
-        this.btnConsider = document.getElementById('consider'); //кнопка подсчитать
-        
-        this.calculation();
-    }  
+      this.output = document.getElementById('output'); //результат
+      this.btnConsider = document.getElementById('consider'); //кнопка подсчитать
+      
+      this.calculation();
+  }  
 
-    calculation() {
-        this.btnConsider.addEventListener('click', () => {
-            this.output.innerHTML = Math.round(this.consumption100.value * this.distance.value  * this.price.value  / 100) + ' рублей';
-        })
-    }
-
-
-
+  calculation() {
+      this.btnConsider.addEventListener('click', () => {
+          this.output.innerHTML = Math.round(this.consumption100.value * this.distance.value  * this.price.value  / 100) + ' рублей';
+      })
+  }
 }
 new Calc();
 
@@ -61,4 +58,3 @@ new Calc();
 //     }
 
 // });
-
