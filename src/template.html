@@ -13,31 +13,41 @@
   type="text/javascript"></script>
 
 <body>
-  <div id="root">
+  <section id="root">
     <section class="calc">
+      <section class="progress">
+        <progress max="100" value="40"></progress>
+        <div class="progress__value"></div>
+        <div class="progress__bg">
+          <div class="progress__bar"></div>
+        </div>
+      </section>
 
-      <div class="progress">
-        <div class="progress-bar" id="progress" role="progressbar" style="width: 0" aria-valuenow="25" aria-valuemin="0"
-          aria-valuemax="100"></div>
-      </div>
+      <section class="calc-distance" id="calc-container">
 
-      <div class="calc__distance" id="calc-container">
-        <p class="calc__distance-description"><i>Введите расстояние:</i></p>
-        <input type="text" id="distance" placeholder="Расстояние в км">
-        <p class="calc__distance-description"><i>Цена за 1 литр:</i></p>
-        <input type="text" id="price" placeholder="Цена за 1 литр" class="entry_field">
+        <p class="calc-distance__description"><i>Введите расстояние:</i></p>
+        <input class="calc-distance__input" type="text" id="distance" placeholder="Расстояние в км">
+        <p class="calc-distance__description"><i>Цена за 1 литр:</i></p>
+        <input class="calc-distance__input" type="text" id="price" placeholder="Цена за 1 литр">
         <p class="calc__distance-description"><i>Расход на 100км:</i></p>
-        <input type="text" id="consumption" placeholder="Расход на 100км" class="entry_field">
+        <input class="calc-distance__input" type="text" id="consumption" placeholder="Расход на 100км">
 
         <div class="calc__distance-checkbox">
-          <input class="" type="checkbox" id="check_two_sides" value=""> </p>Посчитать в обе стороны</p>
-          <input type="checkbox" id="check_liters">
-          <p>Узнать расход</p>
+          <div class="calc__checkbox">
+            <input type="checkbox" id="check_two_sides" value="">
+            <p class="calc__checkbox-text">Посчитать в обе стороны</p>
+          </div>    
+          <div class="calc__checkbox">
+            <input type="checkbox" id="check_liters">
+            <p class="calc__checkbox-text">Узнать расход</p>
+          </div>
         </div>
-        <div class="">
+
+        <div class="calc__distance-result">
           <p>Результат:</p> <strong id="output"></strong>
         </div>
-      </div>
+        
+      </section>
     </section>
 
     <section class="calc-consumption">
@@ -64,7 +74,7 @@
     </section>
 
     <section class="map" id="map"></section>
-  </div>
+  </section>
 </body>
 
 
