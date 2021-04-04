@@ -1,81 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title><%= htmlWebpackPlugin.options.title %></title>
+    </head>
+    <script id="scriptConnectionMap" type="text/javascript"></script>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>
-    <%= htmlWebpackPlugin.options.title %>
-  </title>
-</head>
-<script src="https://api-maps.yandex.ru/2.1/?apikey=107edbda-a282-45c8-9340-736038bcb720&lang=ru_RU"
-  type="text/javascript"></script>
+    <body>
+        <section id="root">
+            <section class="calc">
+                <section class="progress">
+                    <progress max="100" value="40"></progress>
+                    <div class="progress__value"></div>
+                    <div class="progress__bg">
+                        <div class="progress__bar"></div>
+                    </div>
+                </section>
 
-<body>
-  <section id="root">
-    <section class="calc">
-      <section class="progress">
-        <progress max="100" value="40"></progress>
-        <div class="progress__value"></div>
-        <div class="progress__bg">
-          <div class="progress__bar"></div>
-        </div>
-      </section>
+                <section class="calc-distance" id="calc-container">
+                    <p class="calc-distance__description"><i>Введите расстояние:</i></p>
+                    <input class="calc-distance__input" type="text" id="distance" placeholder="Расстояние в км" />
+                    <p class="calc-distance__description"><i>Цена за 1 литр:</i></p>
+                    <input class="calc-distance__input" type="text" id="price" placeholder="Цена за 1 литр" />
+                    <p class="calc__distance-description"><i>Расход на 100км:</i></p>
+                    <input class="calc-distance__input" type="text" id="consumption" placeholder="Расход на 100км" />
 
-      <section class="calc-distance" id="calc-container">
+                    <div class="calc__distance-checkbox">
+                        <div class="calc__checkbox">
+                            <input type="checkbox" id="check_two_sides" value="" />
+                            <p class="calc__checkbox-text">Посчитать в обе стороны</p>
+                        </div>
+                        <div class="calc__checkbox">
+                            <input type="checkbox" id="check_liters" />
+                            <p class="calc__checkbox-text">Узнать расход</p>
+                        </div>
+                    </div>
 
-        <p class="calc-distance__description"><i>Введите расстояние:</i></p>
-        <input class="calc-distance__input" type="text" id="distance" placeholder="Расстояние в км">
-        <p class="calc-distance__description"><i>Цена за 1 литр:</i></p>
-        <input class="calc-distance__input" type="text" id="price" placeholder="Цена за 1 литр">
-        <p class="calc__distance-description"><i>Расход на 100км:</i></p>
-        <input class="calc-distance__input" type="text" id="consumption" placeholder="Расход на 100км">
+                    <div class="calc__distance-result">
+                        <p>Результат:</p>
+                        <strong id="output"></strong>
+                    </div>
+                </section>
+            </section>
 
-        <div class="calc__distance-checkbox">
-          <div class="calc__checkbox">
-            <input type="checkbox" id="check_two_sides" value="">
-            <p class="calc__checkbox-text">Посчитать в обе стороны</p>
-          </div>    
-          <div class="calc__checkbox">
-            <input type="checkbox" id="check_liters">
-            <p class="calc__checkbox-text">Узнать расход</p>
-          </div>
-        </div>
+            <section class="calc-consumption">
+                <div class="calc-consumption__wrapper">
+                    <p>Расход на 100км</p>
+                    <input type="text" id="liters" placeholder="Заправил (литры)" />
+                    <input type="text" id="distance_consumption" placeholder="Проехал" /><br />
+                    <p>Результат:</p>
+                    <strong id="output_100"></strong><br />
+                </div>
+            </section>
 
-        <div class="calc__distance-result">
-          <p>Результат:</p> <strong id="output"></strong>
-        </div>
-        
-      </section>
-    </section>
+            <section class="button-app">
+                <button class="btn btn-success" id="consider">Посчитать</button><br />
+                <button class="btn btn-danger" id="reset">Сбросить</button><br />
+            </section>
 
-    <section class="calc-consumption">
-      <div class="calc-consumption__wrapper">
-        <p>Расход на 100км </p>
-        <input type="text" id="liters" placeholder="Заправил (литры)">
-        <input type="text" id="distance_consumption" placeholder="Проехал"><br>
-        <p>Результат:</p> <strong id="output_100"></strong><br>
-      </div>
-    </section>
+            <section class="points">
+                <div class="points-input">
+                    <input
+                        type="text"
+                        id="pointA"
+                        class="distance_points"
+                        class="entry_field"
+                        placeholder="Откуда?"
+                        value="Санкт-Питербург"
+                    />
+                    <br />
+                    <input
+                        type="text"
+                        id="pointB"
+                        class="distance_points"
+                        class="entry_field"
+                        placeholder="Куда?"
+                        value="Сочи"
+                    /><br />
+                    <button class="btn btn-outline-primary" id="startRoute">Построить маршрут</button><br />
+                </div>
+            </section>
 
-    <section class="button-app">
-      <button class="btn btn-success" id="consider">Посчитать</button><br>
-      <button class="btn btn-danger" id="reset">Сбросить</button><br>
-    </section>
-
-    <section class="points">
-      <div class='points-input'>
-        <input type="text" id="pointA" class="distance_points" class="entry_field" placeholder="Откуда?"
-          value="Санкт-Питербург"> <br>
-        <input type="text" id="pointB" class="distance_points" class="entry_field" placeholder="Куда?" value="Сочи"><br>
-        <button class="btn btn-outline-primary" id="startRoute">Построить маршрут</button><br>
-      </div>
-    </section>
-
-    <section class="map" id="map"></section>
-  </section>
-</body>
-
-
+            <section class="map" id="map"></section>
+        </section>
+    </body>
 </html>
