@@ -1,0 +1,14 @@
+Установка и настройка Prettier:
+
+1) Установить плагин на VS - Prettier Code Formatter
+2) Settings - поиск - Default Formatter - выбрать из списка Prettier
+3) Проверить включенный флажок File > Preferences > Settings > User > Text Editor > Formatting > Format On Save
+4) Выполнить:
+Command + Shift + p
+Поиск: format document with
+Выбрать: Configure Default Formatter...
+Выберать: Prettier по умолчанию.
+
+5) Если не форматирует файлы с какими либо разрешениями:
+Выберите VS Code -> View -> Command Palette и введите: Format Document With
+Затем Configure Default Formatter... , а затем выберите Prettier - Code formatter .

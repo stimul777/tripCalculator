@@ -1,4 +1,5 @@
 // api
+import instanse from './api/instance'
 import yandexMap from './api/yandexMap'
 import calc from './js/calc'
 

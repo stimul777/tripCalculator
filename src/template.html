@@ -12,6 +12,7 @@
         <section id="root">
             <section class="calc">
                 <section class="progress">
+                    <!-- Прогресс-бар -->
                     <progress max="100" value="40"></progress>
                     <div class="progress__value"></div>
                     <div class="progress__bg">
@@ -19,6 +20,7 @@
                     </div>
                 </section>
 
+                <!-- Калькулятор - ввод -->
                 <section class="calc-distance" id="calc-container">
                     <p class="calc-distance__description"><i>Введите расстояние:</i></p>
                     <input class="calc-distance__input" type="text" id="distance" placeholder="Расстояние в км" />
@@ -29,11 +31,11 @@
 
                     <div class="calc__distance-checkbox">
                         <div class="calc__checkbox">
-                            <input type="checkbox" id="check_two_sides" value="" />
+                            <input type="checkbox" value="" />
                             <p class="calc__checkbox-text">Посчитать в обе стороны</p>
                         </div>
                         <div class="calc__checkbox">
-                            <input type="checkbox" id="check_liters" />
+                            <input id="checkInBothDirections" type="checkbox" id="check_liters" />
                             <p class="calc__checkbox-text">Узнать расход</p>
                         </div>
                     </div>
@@ -43,6 +45,24 @@
                         <strong id="output"></strong>
                     </div>
                 </section>
+            </section>
+
+            <!-- Модальное окно -->
+            <section class="modal-windows">
+                <div style="text-align: center">
+                    <a href="#openModal">Открыть модальное окно</a>
+                </div>
+                <div id="openModal" class="modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title">Название</h3>
+                                <a href="#close" title="Close" class="close">×</a>
+                            </div>
+                            <div class="modal-body">Содержимое модального окна...</div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section class="calc-consumption">

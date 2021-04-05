@@ -1,10 +1,11 @@
-class YandexMap {
+import {CONSTANT_HTTP_CONNECTION} from './instance'  
+  class YandexMap {
     constructor() {
         this.connection();
     }
 
-    connection() {
-        const loadScript = url =>
+      connection() {
+          const loadScript = url =>
             new Promise(resolve => {
                 const connectionMap = document.getElementById('scriptConnectionMap');
                 connectionMap.addEventListener('load', () => {
@@ -13,7 +14,7 @@ class YandexMap {
                 connectionMap.src = url;
             });
 
-        loadScript('https://api-maps.yandex.ru/2.1/?apikey=107edbda-a282-45c8-9340-736038bcb720&lang=ru_RU').then(
+        loadScript(CONSTANT_HTTP_CONNECTION).then(
             () => {
                 this.map();
             },

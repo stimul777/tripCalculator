@@ -1,8 +1,0 @@
-1) Установить плагин на VS - Prettier Code Formatter
-2) Settings - поиск - Default Formatter - выбрать из списка Prettier
-3) Проверить включенный флажок File > Preferences > Settings > User > Text Editor > Formatting > Format On Save
-4) ВЫполнить:
-Command + Shift + p
-Поиск: format document with
-Выбрать: Configure Default Formatter...
-Выберать: Prettier по умолчанию.
