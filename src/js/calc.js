@@ -8,14 +8,20 @@ class Calc {
         this.btnConsider = document.getElementById('consider'); //кнопка подсчитать
         // checkbox
         this.checkInBothDirections = document.getElementById('checkInBothDirections');
+        this.checkboxMap = document.getElementById('checkboxMap');
         // elements
         this.calcConsumptionElem = document.getElementsByClassName('calc-consumption')[0];
+        this.map = document.getElementsByClassName('map')[0];
 
         this.btnConsider.addEventListener('click', () => {
             this.calculation();
         });
         this.checkInBothDirections.addEventListener('click', () => {
-            this.modalWindowConsumption();
+            this.elementWindowShow('checkInBothDir');
+        });
+        this.checkboxMap.addEventListener('click', () => {
+            console.log('dsdsds', this.checkboxMap.checked);
+            this.elementWindowShow('checkboxMap');
         });
     }
 
@@ -24,10 +30,16 @@ class Calc {
             Math.round((this.consumption100.value * this.distance.value * this.price.value) / 100) + ' рублей';
     }
 
-    modalWindowConsumption() {
-        this.checkInBothDirections.checked
-            ? (this.calcConsumptionElem.style.display = 'block')
-            : (this.calcConsumptionElem.style.display = 'none');
+    elementWindowShow(elements) {
+        if ('checkInBothDir') {
+            this.checkInBothDirections.checked
+                ? (this.calcConsumptionElem.style.display = 'block')
+                : (this.calcConsumptionElem.style.display = 'none');
+        }
+        if ('checkboxMap') {
+            console.log(this.map);
+            this.checkboxMap.checked ? (this.map.style.display = 'block') : (this.map.style.display = 'none');
+        }
     }
 }
 

@@ -3,6 +3,8 @@
     src: url('../fonts/Montserrat-Regular.ttf');
 }
 
+// loader
+@import './animations/loader';
 // calcConsumption
 @import './calc-consumption/calcConsumption';
 @import './calc-consumption/modalWindow';

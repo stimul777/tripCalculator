@@ -4,11 +4,19 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
-        <title><%= htmlWebpackPlugin.options.title %></title>
+        <title>distance calculator</title>
     </head>
     <script id="scriptConnectionMap" type="text/javascript"></script>
 
     <body>
+        <div class="gooey">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
         <section id="root">
             <section class="calc">
                 <section class="progress">
@@ -38,6 +46,10 @@
                             <input id="checkInBothDirections" type="checkbox" id="check_liters" />
                             <p class="calc__checkbox-text">Узнать расход</p>
                         </div>
+                        <div class="calc__checkbox">
+                            <input id="checkboxMap" type="checkbox" checked />
+                            <p class="calc__checkbox-text">Показать карту</p>
+                        </div>
                     </div>
 
                     <div class="calc__distance-result">
@@ -48,7 +60,7 @@
             </section>
 
             <!-- Модальное окно -->
-            <section class="modal-windows">
+            <!-- <section class="modal-windows">
                 <div style="text-align: center">
                     <a href="#openModal">Открыть модальное окно</a>
                 </div>
@@ -63,7 +75,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
 
             <section class="calc-consumption">
                 <div class="calc-consumption__wrapper">
