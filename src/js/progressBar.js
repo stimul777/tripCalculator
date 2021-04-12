@@ -13,7 +13,6 @@ class ProgressBar extends Calc {
         ];
 
         let progressValPercent = 20;
-
         this.checkInBothDirections.addEventListener('click', () => {
             if (this.checkInBothDirections.checked) {
                 progressValPercent = 14;
@@ -29,6 +28,7 @@ class ProgressBar extends Calc {
         );
 
         elemObj.forEach(f => {
+            // progress scale
             f.el.addEventListener('input', () => {
                 if (f.el.value != '' && !f.el.status) {
                     f.el.status = true;
@@ -36,6 +36,13 @@ class ProgressBar extends Calc {
                 } else if (f.el.value == '') {
                     f.el.status = false;
                     this.progressValue.value = this.progressValue.value - progressValPercent;
+                }
+
+                // disabled button
+                if (this.progressValue.value > 95) {
+                    this.btnConsider.disabled = false;
+                } else {
+                    this.btnConsider.disabled = true;
                 }
             });
         });

@@ -15,7 +15,7 @@ export default class Calc {
         this.output = document.getElementById('output'); //результат
 
         // buttons
-        this.btnConsider = document.getElementById('consider'); //кнопка подсчитать
+        this.btnConsider = document.getElementById('consider'); //кнопка рассчитать
         // checkbox
         this.checkInBothDirections = document.getElementById('checkInBothDirections');
         this.checkboxMap = document.getElementById('checkboxMap');
