@@ -21,7 +21,7 @@
             <section class="calc">
                 <section class="progress">
                     <!-- Прогресс-бар -->
-                    <progress max="100" value="40"></progress>
+                    <progress id="progressValue" max="100" value="0"></progress>
                     <div class="progress__value"></div>
                     <div class="progress__bg">
                         <div class="progress__bar"></div>
@@ -31,7 +31,13 @@
                 <!-- Калькулятор - ввод -->
                 <section class="calc-distance" id="calc-container">
                     <p class="calc-distance__description"><i>Введите расстояние:</i></p>
-                    <input class="calc-distance__input" type="text" id="distance" placeholder="Расстояние в км" />
+                    <input
+                        class="calc-distance__input"
+                        type="text"
+                        id="distance"
+                        placeholder="Расстояние в км"
+                        pattern="[A-Za-z]{3}"
+                    />
                     <p class="calc-distance__description"><i>Цена за 1 литр:</i></p>
                     <input class="calc-distance__input" type="text" id="price" placeholder="Цена за 1 литр" />
                     <p class="calc__distance-description"><i>Расход на 100км:</i></p>

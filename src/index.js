@@ -1,13 +1,12 @@
 // api
-import instanse from './api/instance'
-import yandexMap from './api/yandexMap'
-import calc from './js/calc'
+import instanse from './api/instance';
+import calc from './js/calc';
+import validation from './js/validation';
+import progressBar from './js/progressBar';
+import yandexMap from './api/yandexMap';
 
 // Import of a SVG
-// Импорт SVG
-import webpackLogo from './images/webpack-logo.svg'
+import webpackLogo from './images/webpack-logo.svg';
 
 // Import of styles
-// Импорт стилей
-import './styles/index.scss'
-
+import './styles/index.scss';

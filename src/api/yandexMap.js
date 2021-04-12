@@ -1,11 +1,11 @@
-import {CONSTANT_HTTP_CONNECTION} from './instance'  
-  class YandexMap {
+import { CONSTANT_HTTP_CONNECTION } from './instance';
+class YandexMap {
     constructor() {
         this.connection();
     }
 
-      connection() {
-          const loadScript = url =>
+    connection() {
+        const loadScript = url =>
             new Promise(resolve => {
                 const connectionMap = document.getElementById('scriptConnectionMap');
                 connectionMap.addEventListener('load', () => {
@@ -14,18 +14,14 @@ import {CONSTANT_HTTP_CONNECTION} from './instance'
                 connectionMap.src = url;
             });
 
-        loadScript(CONSTANT_HTTP_CONNECTION).then(
-            () => {
-                this.map();
-            },
-        );
+        loadScript(CONSTANT_HTTP_CONNECTION).then(() => {
+            this.map();
+        });
     }
 
     map() {
         ymaps.ready(() => {
             let map;
-            let pointA = document.getElementById('pointA'); //получаем точку А
-            let pointB = document.getElementById('pointB'); //получаем точку В
             let mapDivId = 'map'; //Id контейнера для карты
             let mapCenter = [55.76, 37.64]; //Координата центра карты по умолчанию
             map = new ymaps.Map(mapDivId, { center: mapCenter, zoom: 3 });

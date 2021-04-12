@@ -1,28 +1,46 @@
-class ProgressBar {
-  constructor() {
-    this.inputs = [...document.querySelectorAll('#calc-container input')]
-    this.progressData = 0
-    this.setEventHandlers()
-  }
+import Calc from './calc';
+class ProgressBar extends Calc {
+    changeProgress() {
+        const elementsInput = [
+            this.distance,
+            this.price,
+            this.consumption100,
+            this.pointA,
+            this.pointB,
+            this.distanceConsumption,
+            this.liters,
+            this.distanceConsumption,
+        ];
 
-  set progressData(data) {
-    this.changeProgressView(data)
-  }
+        let progressValPercent = 20;
 
-  setEventHandlers() {
-    this.inputs.forEach((inp) => {
-      inp.addEventListener('input', this.changeProgressData.bind(this))
-    })
-  }
+        this.checkInBothDirections.addEventListener('click', () => {
+            if (this.checkInBothDirections.checked) {
+                progressValPercent = 14;
+            }
+        });
 
-  changeProgressData() {
-    this.progressData = +this.inputs.filter((inp) => inp.value).length
-  }
+        let elemObj = elementsInput.map(
+            m =>
+                (m = {
+                    el: m,
+                    status: false,
+                }),
+        );
 
-  changeProgressView(data) {
-    let sum = (100 / +this.inputs.length) * data + '%'
-    document.querySelector('.progress-bar').style.width = sum
-  }
+        elemObj.forEach(f => {
+            f.el.addEventListener('input', () => {
+                if (f.el.value != '' && !f.el.status) {
+                    f.el.status = true;
+                    this.progressValue.value = this.progressValue.value + progressValPercent;
+                } else if (f.el.value == '') {
+                    f.el.status = false;
+                    this.progressValue.value = this.progressValue.value - progressValPercent;
+                }
+            });
+        });
+    }
 }
 
-new ProgressBar()
+let progress = new ProgressBar();
+progress.changeProgress();

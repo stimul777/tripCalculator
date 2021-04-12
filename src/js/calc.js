@@ -1,9 +1,19 @@
-class Calc {
+export default class Calc {
     constructor() {
+        // input
         this.distance = document.getElementById('distance'); //расстояние
-        this.consumption100 = document.getElementById('consumption'); //расход литров на 100км
         this.price = document.getElementById('price'); //цена за 1 л
+        this.consumption100 = document.getElementById('consumption'); //расход литров на 100км
+        this.pointA = document.getElementById('pointA'); //получаем точку А
+        this.pointB = document.getElementById('pointB'); //получаем точку В
+        this.liters = document.getElementById('liters'); //заправил Л
+        this.distanceConsumption = document.getElementById('distance_consumption'); //проехал км
+
+        // progress
+        this.progressValue = document.getElementById('progressValue');
+
         this.output = document.getElementById('output'); //результат
+
         // buttons
         this.btnConsider = document.getElementById('consider'); //кнопка подсчитать
         // checkbox
@@ -38,7 +48,6 @@ class Calc {
                 : (this.calcConsumptionElem.style.display = 'none');
         }
         if ('checkboxMap') {
-            console.log(this.map);
             this.checkboxMap.checked ? (this.map.style.display = 'block') : (this.map.style.display = 'none');
         }
     }
