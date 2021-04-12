@@ -12,6 +12,7 @@ class Calc {
         // elements
         this.calcConsumptionElem = document.getElementsByClassName('calc-consumption')[0];
         this.map = document.getElementsByClassName('map')[0];
+        this.loader = document.getElementsByClassName('loader-gooey');
 
         this.btnConsider.addEventListener('click', () => {
             this.calculation();
